@@ -22,7 +22,7 @@ services:
     depends_on:
       - service-workshop-postgres
     volumes:
-      - ./app:/app
+      - ./app/src:/app/src
       - /app/node_modules/
     ports:
       - 3000:3000
