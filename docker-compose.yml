@@ -23,6 +23,7 @@ services:
       - service-workshop-postgres
     volumes:
       - ./app:/app
+      - /app/node_modules/
     ports:
       - 3000:3000
     command: [ "sh", "-c", "while :; do sleep 10; done;" ]
