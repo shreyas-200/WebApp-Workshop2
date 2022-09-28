@@ -4,7 +4,7 @@ export class responseObject {
 }
 
 export class deleteUser {
-    emailId: string;
+    id: number;
 }
 
 export class getUser {

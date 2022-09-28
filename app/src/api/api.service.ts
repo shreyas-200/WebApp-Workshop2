@@ -64,7 +64,7 @@ export class ApiService {
     async updateUser(userData: UserEntity) : Promise<responseObject> {
 
         const dbResult = await this.user.update(
-            { emailId: userData.emailId },
+            { id: userData.id },
             { 
                 emailId: userData.emailId,
                 firstName: userData.firstName,
@@ -82,6 +82,7 @@ export class ApiService {
             result = {
                 status: "success",
                 message: "Updated successfully"
+                
             }
         } else {
             result = {
@@ -96,7 +97,7 @@ export class ApiService {
     async deleteUser(userData: deleteUser) : Promise<responseObject> {
 
         const dbResult = await this.user.delete(
-            { emailId: userData.emailId },
+            { id: userData.id },
         ).catch((err)=>{
             console.log(err.message)
             throw new BadRequestException('Some error');
