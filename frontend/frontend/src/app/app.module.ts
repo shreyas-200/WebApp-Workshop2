@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { UsersComponent } from './users/users.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProductComponent,
     CartComponent,
     UsersComponent,
-    DashboardComponent,   
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
