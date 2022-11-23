@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query,Delete } from '@nestjs/common';
 import { responseObject } from 'src/common/dto/api.dto';
 import { UserEntity } from 'src/common/entity/authuser.entity';
 import { ApiService } from './api.service';
@@ -36,7 +36,7 @@ export class ApiController {
         return this.apiService.updateUser(userData);
     }
 
-    @Post('delete-user')
+    @Delete('delete-user')
     deleteUser(@Body() userData: UserEntity) : Promise<responseObject> {
         return this.apiService.deleteUser(userData);
     }
