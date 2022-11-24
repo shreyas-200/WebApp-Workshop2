@@ -8,6 +8,7 @@ import { ProductComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { UsersComponent } from './users/users.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CartComponent,
     UsersComponent,
     DashboardComponent,
+    CreateUserComponent,
   ],
   imports: [
     BrowserModule,

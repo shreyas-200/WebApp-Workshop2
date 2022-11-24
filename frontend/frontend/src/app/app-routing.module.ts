@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './products/products.component';
 import { UsersComponent } from './users/users.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
 {
   path:'users',
   component:UsersComponent
+},
+{
+  path:'create-user',
+  component: CreateUserComponent
 }
 ];
 
