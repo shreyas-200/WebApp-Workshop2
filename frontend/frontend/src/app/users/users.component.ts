@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { User } from '../model/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-users',
@@ -9,25 +10,31 @@ import { Observable } from 'rxjs';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private userService:UserService,private router: Router) { }
 
-  data:any[]=[]
+  users:User[]=[]
   
 
   ngOnInit(): void {
-    this.getUsers().subscribe(data =>{
-      
-      this.data = data
-    })
+    this.getUsers();
   }
 
-  getUsers():Observable<any>{
-    this.http.get("http://localhost:3000/users").subscribe(data =>{
-      console.log(data);
+  getUsers(){
+    this.userService.getUsers().subscribe({next:(data : any)=>{
+      console.log('users',data)
+      this.users = data;
+    },error:(error)=>{
+      console.log('users error',error)
+    }});
+  }
+
+  deleteUser(id:number){
+    this.userService.deleteUser(id).subscribe(data =>{
+        this.getUsers();
     });
-    return this.http.get("http://localhost:3000/users");
+    
   }
 
-  
+
 
 }

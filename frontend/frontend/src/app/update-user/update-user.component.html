@@ -1,6 +1,6 @@
-<div class="container mt-50 add-new-emp">
+<div class="container mt-50 update-emp mb-40">
     <div class="fnt-b table-head">
-      <h5>Add New Employee</h5>
+      <h5>Update Employee</h5>
     </div>
     <div class="row g-3 mt-10">
         <div class="col-md-6">
@@ -19,11 +19,8 @@
         <label for="inputZip" class="form-label">Zip</label>
         <input type="text" class="form-control" id="inputZip" placeholder="ZipCode" [(ngModel)]="zipCode">
       </div>
-      <div *ngIf="hasError" class="error-container">
-            <span>{{errorMessage}}</span>
-      </div>
       <div class="col-md-6">
-        <button type="submit" class="btn btn-secondary add" (click)="addUser()">Add</button>
+        <button type="submit" class="btn btn-secondary add" (click)="updateUser()">Update</button>
       </div>
       </div>
   </div>

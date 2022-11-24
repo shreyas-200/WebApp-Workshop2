@@ -36,7 +36,7 @@ export class ApiController {
         return this.apiService.updateUser(userData);
     }
 
-    @Delete('delete-user')
+    @Post('delete-user')
     deleteUser(@Body() userData: UserEntity) : Promise<responseObject> {
         return this.apiService.deleteUser(userData);
     }

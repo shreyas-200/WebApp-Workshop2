@@ -1,25 +1,13 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { CartComponent } from './cart/cart.component';
+
 import { CreateUserComponent } from './create-user/create-user.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductComponent } from './products/products.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+
+
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
- { 
-  path:'',
-  component: DashboardComponent
-},
-{ 
-  path:'products',
-  component: ProductComponent
-},
-{
-  path:'cart',
-  component:CartComponent
-},
 {
   path:'users',
   component:UsersComponent
@@ -27,7 +15,12 @@ const routes: Routes = [
 {
   path:'create-user',
   component: CreateUserComponent
-}
+},
+{
+  path:'update-user/:id',
+  component:UpdateUserComponent
+},
+
 ];
 
 @NgModule({
